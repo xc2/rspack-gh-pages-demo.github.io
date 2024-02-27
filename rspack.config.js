@@ -59,6 +59,11 @@ module.exports = {
 		new rspack.HtmlRspackPlugin({
 			template: "./index.html"
 		}),
+		new rspack.CopyRspackPlugin({
+			patterns: [
+				{ from: "public" },
+			]
+		}),
 		isDev ? new refreshPlugin() : null
 	].filter(Boolean)
 };
